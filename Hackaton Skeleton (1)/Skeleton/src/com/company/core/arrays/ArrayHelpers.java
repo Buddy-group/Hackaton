@@ -93,12 +93,20 @@ public class ArrayHelpers {
                 return i;
             }
         }
-
         return -1;
-    } //d
+    }
 
     public static int[] insert(int[] source, int index, int element) {
-        return new int[1];
+        int[] result = new int[source.length + 1];
+        for (int i = 0; i < index; i++) {
+            result[i] = source[i];
+        }
+        result[index] = element;
+        for (int i = index+1; i < result.length ; i++) {
+            result[i] = source[i-1];
+        }
+
+        return result;
     }
 
     public static boolean isValidIndex(int[] source, int index) {
@@ -115,17 +123,17 @@ public class ArrayHelpers {
 
     public static int lastIndexOf(int[] source, int target) {
         return 0;
-    }
+    } //G
 
     public static int[] removeAllOccurrences(int[] source, int element) {
         return new int[1];
-    }
+    }//G
 
-    public static void reverse(int[] arrayToReverse) {
+    public static void reverse(int[] arrayToReverse) { //G
     }
 
     public static int[] section(int[] source, int startIndex, int endIndex) {
         return new int[1];
-    }
+    } //G
 
 }

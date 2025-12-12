@@ -4,7 +4,10 @@ package com.company.core.strings;
 public class StringHelpers {
 
     public static String abbreviate(String source, int maxLength) {
-        return null;
+        if (source.length() <= maxLength){
+            return source;
+        }
+        else return source.substring(0,maxLength) + "...";
     } // D
 
     public static String capitalize(String source) {
@@ -16,16 +19,32 @@ public class StringHelpers {
     } //D
 
     public static boolean contains(String source, char symbol) {
+        for (int i = 0; i < source.length(); i++) {
+            if(source.charAt(i) == symbol){
+                return true;
+            }
+        }
         return false;
-    } // A
+    }
 
     public static boolean endsWith(String source, char target) {
+        if(source.length() >0){
+            char lastChar = source.charAt(source.length()-1);
+            if(target == lastChar){
+                return true;
+            }
+        }
         return false;
-    } // A
+    }
 
     public static int firstIndexOf(String source, char target) {
-        return 0;
-    } // A
+        for (int i = 0; i < source.length(); i++) {
+            if(target == source.charAt(i)){
+                return i;
+            }
+        }
+        return -1;
+    }
 
     public static int lastIndexOf(String source, char symbol) {
         char[] sourceArr = source.toCharArray();
