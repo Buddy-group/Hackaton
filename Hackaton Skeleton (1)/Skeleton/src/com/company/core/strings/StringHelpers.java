@@ -42,8 +42,7 @@ public class StringHelpers {
 
     public static String pad(String source, int length, char paddingSymbol)  {
 
-
-        int totalPadding = length - source.length();
+        int totalPadding = Math.abs(length - source.length());
         int leftPad = totalPadding / 2;
         int rightPad = totalPadding / 2;
         String leftPadding = "";
@@ -63,7 +62,20 @@ public class StringHelpers {
     } // S
 
     public static String padEnd(String source, int length, char paddingSymbol) {
-        return null;
+        if (source.length() == 0){
+            source = "";
+        }else if (source.length() > length) {
+            source = source;
+        }else if (length > source.length()){
+            int paddingLength = length - source.length();
+            String padding = "";
+            for (int i = 0; i < paddingLength; i++) {
+                padding = padding + paddingSymbol;
+            }
+            source = source + padding;
+        }
+
+        return source;
     } // S
 
     public static String padStart(String source, int length, char paddingSymbol) {
