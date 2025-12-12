@@ -5,22 +5,21 @@ public class ArrayHelpers {
 
     public static int[] add(int[] source, int element) {
         int[] sourceRevamp = new int[source.length + 1];
-        for (int i = 0; i < source.length ; i++) {
+        for (int i = 0; i < source.length; i++) {
             sourceRevamp[i] = source[i];
         }
-        sourceRevamp[sourceRevamp.length-1] = element;
+        sourceRevamp[sourceRevamp.length - 1] = element;
         return sourceRevamp;
     }
 
     public static int[] addFirst(int[] source, int element) {
-        if (source.length == 0){
+        if (source.length == 0) {
             int[] emptyArr = new int[]{element};
             return emptyArr;
-        }
-        else {
+        } else {
             int[] filledArr = new int[source.length + 1];
             filledArr[0] = element;
-            for (int i = 1; i < filledArr.length ; i++) {
+            for (int i = 1; i < filledArr.length; i++) {
                 filledArr[i] = source[i - 1];
             }
             return filledArr;
@@ -42,7 +41,13 @@ public class ArrayHelpers {
     }
 
     public static boolean contains(int[] source, int element) {
-        return false;
+        boolean contains = false;
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] == element) {
+                contains = true;
+            }
+        }
+        return contains;
     }
 
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
@@ -77,7 +82,9 @@ public class ArrayHelpers {
     }
 
     public static void fill(int[] source, int element) {
-
+        for (int i = 0; i < source.length; i++) {
+            source[i] = element;
+        }
     }
 
     public static int firstIndexOf(int[] source, int target) {
@@ -89,6 +96,14 @@ public class ArrayHelpers {
     }
 
     public static boolean isValidIndex(int[] source, int index) {
+
+        if (source.length == 0){
+            return false;
+        }
+
+        if (index >= 0 && index < source.length){
+            return true;
+        }
         return false;
     }
 
