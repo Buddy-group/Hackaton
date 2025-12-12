@@ -93,9 +93,8 @@ public class ArrayHelpers {
                 return i;
             }
         }
-
         return -1;
-    } //d
+    }
 
     public static int[] insert(int[] source, int index, int element) {
         return new int[1];

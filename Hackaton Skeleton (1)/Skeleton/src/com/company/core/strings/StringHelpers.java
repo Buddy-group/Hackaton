@@ -4,7 +4,10 @@ package com.company.core.strings;
 public class StringHelpers {
 
     public static String abbreviate(String source, int maxLength) {
-        return null;
+        if (source.length() <= maxLength){
+            return source;
+        }
+        else return source.substring(0,maxLength) + "...";
     } // D
 
     public static String capitalize(String source) {
