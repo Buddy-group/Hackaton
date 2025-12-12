@@ -85,7 +85,16 @@ public class ArrayHelpers {
     } //d
 
     public static int[] insert(int[] source, int index, int element) {
-        return new int[1];
+        int[] result = new int[source.length + 1];
+        for (int i = 0; i < index; i++) {
+            result[i] = source[i];
+        }
+        result[index] = element;
+        for (int i = index+1; i < result.length ; i++) {
+            result[i] = source[i-1];
+        }
+
+        return result;
     }
 
     public static boolean isValidIndex(int[] source, int index) {
