@@ -12,7 +12,17 @@ public class ArrayHelpers {
     }
 
     public static int[] addAll(int[] source, int... elements) {
-        return new int[1];
+        int[] result = new int[source.length + elements.length];
+
+        for (int i = 0; i < source.length; i++) {
+            result[i] = source[i];
+        }
+
+        for (int i = 0; i < elements.length; i++) {
+            result[source.length + i] = elements[i];
+        }
+
+        return result;
     }
 
     public static boolean contains(int[] source, int element) {
