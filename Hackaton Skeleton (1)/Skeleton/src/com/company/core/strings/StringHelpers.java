@@ -28,11 +28,37 @@ public class StringHelpers {
     } // A
 
     public static int lastIndexOf(String source, char symbol) {
-        return 0;
+        char[] sourceArr = source.toCharArray();
+        int index = -1;
+
+        for (int i = 0; i < sourceArr.length ; i++) {
+            if (symbol == sourceArr[i]) {
+                index = i;
+                break;
+            }
+        }
+        return index;
     } // S
 
     public static String pad(String source, int length, char paddingSymbol)  {
-        return null;
+
+
+        int totalPadding = length - source.length();
+        int leftPad = totalPadding / 2;
+        int rightPad = totalPadding / 2;
+        String leftPadding = "";
+        String rightPadding = "";
+        if (source.length() > length) {
+            source = source;
+        }else if (length % 2 != 0) {
+            for (int i = 0; i < leftPad; i++) {
+                leftPadding = leftPadding + paddingSymbol;
+            }
+            for (int i = 0; i < rightPad; i++) {
+                rightPadding = rightPadding + paddingSymbol;
+            }
+        }
+        return leftPadding+source+rightPadding;
 
     } // S
 
