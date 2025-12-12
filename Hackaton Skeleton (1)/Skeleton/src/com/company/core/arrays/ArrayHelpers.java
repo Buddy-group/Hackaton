@@ -35,7 +35,13 @@ public class ArrayHelpers {
 
     public static void copyFrom(int[] sourceArray, int sourceStartIndex,
                                 int[] destinationArray, int destStartIndex, int count) {
-
+        int indexSource = sourceStartIndex;
+        int indexDest = destStartIndex;
+        for (int i = 0; i < count; i++) {
+            destinationArray[indexDest] = sourceArray[indexSource];
+            indexSource++;
+            indexDest++;
+        }
     }
 
     public static void fill(int[] source, int element) {
