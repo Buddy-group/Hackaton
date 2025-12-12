@@ -4,7 +4,12 @@ package com.company.core.arrays;
 public class ArrayHelpers {
 
     public static int[] add(int[] source, int element) {
-        return new int[1];
+        int[] sourceRevamp = new int[source.length + 1];
+        for (int i = 0; i < source.length ; i++) {
+            sourceRevamp[i] = source[i];
+        }
+        sourceRevamp[sourceRevamp.length-1] = element;
+        return sourceRevamp;
     }
 
     public static int[] addFirst(int[] source, int element) {
