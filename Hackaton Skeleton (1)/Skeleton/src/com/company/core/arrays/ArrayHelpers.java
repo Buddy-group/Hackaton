@@ -88,7 +88,13 @@ public class ArrayHelpers {
     }
 
     public static int firstIndexOf(int[] source, int target) {
-        return 0;
+        for (int i = 0; i < source.length; i++) {
+            if (target == source[i]){
+                return i;
+            }
+        }
+
+        return -1;
     } //d
 
     public static int[] insert(int[] source, int index, int element) {
