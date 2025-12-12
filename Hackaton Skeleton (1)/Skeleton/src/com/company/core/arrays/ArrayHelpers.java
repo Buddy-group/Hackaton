@@ -8,7 +8,18 @@ public class ArrayHelpers {
     }
 
     public static int[] addFirst(int[] source, int element) {
-        return new int[1];
+        if (source.length == 0){
+            int[] emptyArr = new int[]{element};
+            return emptyArr;
+        }
+        else {
+            int[] filledArr = new int[source.length + 1];
+            filledArr[0] = element;
+            for (int i = 1; i < filledArr.length ; i++) {
+                filledArr[i] = source[i - 1];
+            }
+            return filledArr;
+        }
     }
 
     public static int[] addAll(int[] source, int... elements) {
@@ -29,7 +40,7 @@ public class ArrayHelpers {
         return false;
     }
 
-    public static void copy(int[] sourceArray, int[] destinationArray, int count) {
+    public static void copy(int[] sourceArray, int[] destinationArray, int count) {// d
 
     }
 
@@ -44,7 +55,7 @@ public class ArrayHelpers {
 
     public static int firstIndexOf(int[] source, int target) {
         return 0;
-    }
+    } //d
 
     public static int[] insert(int[] source, int index, int element) {
         return new int[1];
