@@ -123,17 +123,17 @@ public class ArrayHelpers {
 
     public static int lastIndexOf(int[] source, int target) {
         return 0;
-    }
+    } //G
 
     public static int[] removeAllOccurrences(int[] source, int element) {
         return new int[1];
-    }
+    }//G
 
-    public static void reverse(int[] arrayToReverse) {
+    public static void reverse(int[] arrayToReverse) { //G
     }
 
     public static int[] section(int[] source, int startIndex, int endIndex) {
         return new int[1];
-    }
+    } //G
 
 }
