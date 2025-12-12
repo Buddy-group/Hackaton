@@ -45,7 +45,23 @@ public class ArrayHelpers {
         return false;
     }
 
-    public static void copy(int[] sourceArray, int[] destinationArray, int count) {// d
+    public static void copy(int[] sourceArray, int[] destinationArray, int count) {
+
+        if(sourceArray.length >= destinationArray.length){
+            for (int i = 0; i < destinationArray.length; i++) {
+                destinationArray[i] = sourceArray[i];
+            }
+        }
+        else {
+            int index = 0;
+            for (int i = 0; i < sourceArray.length; i++) {
+                destinationArray[i] = sourceArray[i];
+                index++;
+            }
+            for (int i = index; i <destinationArray.length ; i++) {
+                destinationArray[i] = 0;
+            }
+        }
 
     }
 
