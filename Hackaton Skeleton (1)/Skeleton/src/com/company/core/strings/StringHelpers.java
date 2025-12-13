@@ -8,7 +8,7 @@ public class StringHelpers {
             return source;
         }
         else return source.substring(0,maxLength) + "...";
-    } // D
+    }
 
     public static String capitalize(String source) {
         if (source.isEmpty()){
@@ -18,11 +18,11 @@ public class StringHelpers {
         first =(char) (first - ('a' - 'A'));
 
         return first + source.substring(1);
-    } // D
+    }
 
     public static String concat(String string1, String string2) {
-        return null;
-    } //D
+        return String.format("%s%s", string1, string2);
+    }
 
     public static boolean contains(String source, char symbol) {
         for (int i = 0; i < source.length(); i++) {
