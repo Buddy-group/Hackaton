@@ -122,7 +122,13 @@ public class ArrayHelpers {
     }
 
     public static int lastIndexOf(int[] source, int target) {
-        return 0;
+        int currentLastIndex = -1;
+        for (int i = 0; i < source.length; i++) {
+            if (source[i]==target){
+                currentLastIndex = i;
+            }
+        }
+        return currentLastIndex;
     } //G
 
     public static int[] removeAllOccurrences(int[] source, int element) {
