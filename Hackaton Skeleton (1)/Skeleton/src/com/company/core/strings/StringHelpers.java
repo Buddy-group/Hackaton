@@ -11,7 +11,13 @@ public class StringHelpers {
     } // D
 
     public static String capitalize(String source) {
-        return null;
+        if (source.isEmpty()){
+            return "";
+        }
+        char first = source.charAt(0);
+        first =(char) (first - ('a' - 'A'));
+
+        return first + source.substring(1);
     } // D
 
     public static String concat(String string1, String string2) {
