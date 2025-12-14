@@ -163,14 +163,13 @@ public class ArrayHelpers {
         }
         return newArray;
     }
-    
+
     /**
      * Reverses the given array by swapping elements from the beginning
      * with elements from the end until the middle is reached.
      *
      * @param arrayToReverse the array that should be reversed
      * @return void
-     *
      * @author Gabriela
      */
     public static void reverse(int[] arrayToReverse) {
@@ -182,8 +181,35 @@ public class ArrayHelpers {
         }
     }
 
+    /**
+     * Returns a section of the source array starting from the given start index.
+     * If the given range is longer than the array, all remaining elements are taken.
+     *
+     * @param source the original array
+     * @param startIndex the index from which the section starts
+     * @param endIndex the length of the section to take
+     * @return a new array containing the selected section, or the source array if the start index is invalid
+     *
+     * @author Gabriela
+     */
     public static int[] section(int[] source, int startIndex, int endIndex) {
-        return new int[1];
-    } //G
+        if (source.length == 0) {
+            return new int[]{};
+        }
+
+        if (startIndex < 0 || startIndex >= source.length) {
+            return source;
+        }
+        if (endIndex > source.length) {
+            endIndex = source.length-1;
+        }
+        int[] newArray = new int[endIndex - startIndex + 1];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = source[startIndex];
+            startIndex++;
+        }
+
+        return newArray;
+    }
 
 }
