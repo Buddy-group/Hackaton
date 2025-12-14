@@ -148,9 +148,26 @@ public class StringHelpers {
         return newSource;
     }
 
+    /**
+     * Reverses the given string by swapping characters from the beginning
+     * with characters from the end until the middle is reached.
+     *
+     * @param source the original string to be reversed
+     * @return a new string with the characters in reverse order
+     *
+     * @author Gabriela
+     */
     public static String reverse(String source) {
-        return null;
-    } // G
+        char [] charArray = source.toCharArray();
+        for (int i = 0; i < charArray.length/2; i++) {
+            char temp;
+            temp = charArray[i];
+            charArray[i] = charArray[charArray.length-i-1];
+            charArray[charArray.length-i-1] = temp;
+        }
+        String reversedString = new String(charArray);
+        return reversedString;
+    }
 
     public static String section(String source, int start, int end) {
         return null;
