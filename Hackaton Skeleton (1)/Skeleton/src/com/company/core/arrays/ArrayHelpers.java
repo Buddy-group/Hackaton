@@ -126,7 +126,6 @@ public class ArrayHelpers {
      * @param source the array in which the target is searched
      * @param target the value whose last index is returned
      * @return the index of the last occurrence of the target, or -1 if it is not found
-     *
      * @author Gabriela
      */
     public static int lastIndexOf(int[] source, int target) {
@@ -142,10 +141,9 @@ public class ArrayHelpers {
     /**
      * Removes all occurrences of a given element from the source array.
      *
-     * @param source the array from which the element will be removed
+     * @param source  the array from which the element will be removed
      * @param element the value that should be removed from the array
      * @return a new array without the given element
-     *
      * @author Gabriela
      */
     public static int[] removeAllOccurrences(int[] source, int element) {
@@ -165,8 +163,23 @@ public class ArrayHelpers {
         }
         return newArray;
     }
-
-    public static void reverse(int[] arrayToReverse) { //G
+    
+    /**
+     * Reverses the given array by swapping elements from the beginning
+     * with elements from the end until the middle is reached.
+     *
+     * @param arrayToReverse the array that should be reversed
+     * @return void
+     *
+     * @author Gabriela
+     */
+    public static void reverse(int[] arrayToReverse) {
+        int tempNumber;
+        for (int i = 0; i < arrayToReverse.length / 2; i++) {
+            tempNumber = arrayToReverse[i];
+            arrayToReverse[i] = arrayToReverse[arrayToReverse.length - 1 - i];
+            arrayToReverse[arrayToReverse.length - 1 - i] = tempNumber;
+        }
     }
 
     public static int[] section(int[] source, int startIndex, int endIndex) {
