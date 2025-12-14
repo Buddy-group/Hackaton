@@ -119,16 +119,34 @@ public class StringHelpers {
         } else if (source.length() > length) {
             source = source;
         } else if (length > source.length()) {
-            for (int i = 0; i < (length-source.length(); i++) {
+            for (int i = 0; i < (length-source.length()); i++) {
                 paddedSource = paddingSymbol + paddedSource;
             }
         }
         return paddedSource;
     }
 
+    /**
+     * Repeats the given string a specified number of times.
+     *
+     * @param source the string to be repeated
+     * @param times the number of times the string should be repeated
+     * @return a new string that contains the source string repeated the given number of times
+     *
+     * @author Gabriela
+     */
     public static String repeat(String source, int times) {
-        return null;
-    } // G
+        String newSource = source;
+        if (times == 0){
+            return source;
+        }
+        else {
+            for (int i = 0; i < times-1; i++) {
+                newSource = newSource+source;
+            }
+        }
+        return newSource;
+    }
 
     public static String reverse(String source) {
         return null;
