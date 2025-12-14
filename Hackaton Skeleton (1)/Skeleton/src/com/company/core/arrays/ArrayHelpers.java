@@ -11,7 +11,14 @@ public class ArrayHelpers {
         sourceRevamp[sourceRevamp.length - 1] = element;
         return sourceRevamp;
     }
-
+    /**
+     * Adds at the first index of the given array  the given element.
+     *
+     * @param source the array in which we have to add the element.
+     * @param element the value which has to be added to the array.
+     * @return the array with the added element at first position.
+     * @author Daniel
+     */
     public static int[] addFirst(int[] source, int element) {
         if (source.length == 0) {
             int[] emptyArr = new int[]{element};
@@ -49,11 +56,17 @@ public class ArrayHelpers {
         }
         return contains;
     }
-
+    /**
+     * Copy the elements from the sourceArray to the destinationArray, if the amount of the source array are less fill the array with 0.
+     * @param sourceArray the array in which we take the elements.
+     * @param destinationArray the array in which we fill the element form the sourceArray.
+     * @param count the number of elements to be added to the destinationArray.
+     * @author Daniel
+     */
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
 
-        if (sourceArray.length >= destinationArray.length) {
-            for (int i = 0; i < destinationArray.length; i++) {
+        if (sourceArray.length >= count) {
+            for (int i = 0; i < count; i++) {
                 destinationArray[i] = sourceArray[i];
             }
         } else {
@@ -62,7 +75,7 @@ public class ArrayHelpers {
                 destinationArray[i] = sourceArray[i];
                 index++;
             }
-            for (int i = index; i < destinationArray.length; i++) {
+            for (int i = index; i < count; i++) {
                 destinationArray[i] = 0;
             }
         }
@@ -85,7 +98,13 @@ public class ArrayHelpers {
             source[i] = element;
         }
     }
-
+    /**
+     * Find the element form the given index in the array.
+     * @param source the array in which we take the target.
+     * @param target the position at the array in which the number is located.
+     * @return  return the number at the given index.
+     * @author Daniel
+     */
     public static int firstIndexOf(int[] source, int target) {
         for (int i = 0; i < source.length; i++) {
             if (target == source[i]) {
