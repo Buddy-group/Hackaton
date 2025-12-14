@@ -52,18 +52,17 @@ public class ArrayHelpers {
 
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
 
-        if(sourceArray.length >= destinationArray.length){
+        if (sourceArray.length >= destinationArray.length) {
             for (int i = 0; i < destinationArray.length; i++) {
                 destinationArray[i] = sourceArray[i];
             }
-        }
-        else {
+        } else {
             int index = 0;
             for (int i = 0; i < sourceArray.length; i++) {
                 destinationArray[i] = sourceArray[i];
                 index++;
             }
-            for (int i = index; i <destinationArray.length ; i++) {
+            for (int i = index; i < destinationArray.length; i++) {
                 destinationArray[i] = 0;
             }
         }
@@ -89,7 +88,7 @@ public class ArrayHelpers {
 
     public static int firstIndexOf(int[] source, int target) {
         for (int i = 0; i < source.length; i++) {
-            if (target == source[i]){
+            if (target == source[i]) {
                 return i;
             }
         }
@@ -102,8 +101,8 @@ public class ArrayHelpers {
             result[i] = source[i];
         }
         result[index] = element;
-        for (int i = index+1; i < result.length ; i++) {
-            result[i] = source[i-1];
+        for (int i = index + 1; i < result.length; i++) {
+            result[i] = source[i - 1];
         }
 
         return result;
@@ -111,29 +110,61 @@ public class ArrayHelpers {
 
     public static boolean isValidIndex(int[] source, int index) {
 
-        if (source.length == 0){
+        if (source.length == 0) {
             return false;
         }
 
-        if (index >= 0 && index < source.length){
+        if (index >= 0 && index < source.length) {
             return true;
         }
         return false;
     }
 
+    /**
+     * Finds the last index of the given target element in the array.
+     *
+     * @param source the array in which the target is searched
+     * @param target the value whose last index is returned
+     * @return the index of the last occurrence of the target, or -1 if it is not found
+     *
+     * @author Gabriela
+     */
     public static int lastIndexOf(int[] source, int target) {
         int currentLastIndex = -1;
         for (int i = 0; i < source.length; i++) {
-            if (source[i]==target){
+            if (source[i] == target) {
                 currentLastIndex = i;
             }
         }
         return currentLastIndex;
-    } //G
+    }
 
+    /**
+     * Removes all occurrences of a given element from the source array.
+     *
+     * @param source the array from which the element will be removed
+     * @param element the value that should be removed from the array
+     * @return a new array without the given element
+     *
+     * @author Gabriela
+     */
     public static int[] removeAllOccurrences(int[] source, int element) {
-        return new int[1];
-    }//G
+        int countElement = 0;
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] == element) {
+                countElement++;
+            }
+        }
+        int[] newArray = new int[source.length - countElement];
+        int j = 0;
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] != element) {
+                newArray[j] = source[i];
+                j++;
+            }
+        }
+        return newArray;
+    }
 
     public static void reverse(int[] arrayToReverse) { //G
     }
