@@ -185,11 +185,10 @@ public class ArrayHelpers {
      * Returns a section of the source array starting from the given start index.
      * If the given range is longer than the array, all remaining elements are taken.
      *
-     * @param source the original array
+     * @param source     the original array
      * @param startIndex the index from which the section starts
-     * @param endIndex the length of the section to take
+     * @param endIndex   the length of the section to take
      * @return a new array containing the selected section, or the source array if the start index is invalid
-     *
      * @author Gabriela
      */
     public static int[] section(int[] source, int startIndex, int endIndex) {
@@ -201,7 +200,7 @@ public class ArrayHelpers {
             return source;
         }
         if (endIndex > source.length) {
-            endIndex = source.length-1;
+            endIndex = source.length - 1;
         }
         int[] newArray = new int[endIndex - startIndex + 1];
         for (int i = 0; i < newArray.length; i++) {

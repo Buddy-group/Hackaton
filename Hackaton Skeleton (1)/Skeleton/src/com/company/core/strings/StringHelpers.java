@@ -4,18 +4,17 @@ package com.company.core.strings;
 public class StringHelpers {
 
     public static String abbreviate(String source, int maxLength) {
-        if (source.length() <= maxLength){
+        if (source.length() <= maxLength) {
             return source;
-        }
-        else return source.substring(0,maxLength) + "...";
+        } else return source.substring(0, maxLength) + "...";
     }
 
     public static String capitalize(String source) {
-        if (source.isEmpty()){
+        if (source.isEmpty()) {
             return "";
         }
         char first = source.charAt(0);
-        first =(char) (first - ('a' - 'A'));
+        first = (char) (first - ('a' - 'A'));
 
         return first + source.substring(1);
     }
@@ -26,7 +25,7 @@ public class StringHelpers {
 
     public static boolean contains(String source, char symbol) {
         for (int i = 0; i < source.length(); i++) {
-            if(source.charAt(i) == symbol){
+            if (source.charAt(i) == symbol) {
                 return true;
             }
         }
@@ -34,9 +33,9 @@ public class StringHelpers {
     }
 
     public static boolean endsWith(String source, char target) {
-        if(source.length() >0){
-            char lastChar = source.charAt(source.length()-1);
-            if(target == lastChar){
+        if (source.length() > 0) {
+            char lastChar = source.charAt(source.length() - 1);
+            if (target == lastChar) {
                 return true;
             }
         }
@@ -45,7 +44,7 @@ public class StringHelpers {
 
     public static int firstIndexOf(String source, char target) {
         for (int i = 0; i < source.length(); i++) {
-            if(target == source.charAt(i)){
+            if (target == source.charAt(i)) {
                 return i;
             }
         }
@@ -56,7 +55,7 @@ public class StringHelpers {
         char[] sourceArr = source.toCharArray();
         int index = -1;
 
-        for (int i = 0; i < sourceArr.length ; i++) {
+        for (int i = 0; i < sourceArr.length; i++) {
             if (symbol == sourceArr[i]) {
                 index = i;
                 break;
@@ -65,7 +64,7 @@ public class StringHelpers {
         return index;
     } // S
 
-    public static String pad(String source, int length, char paddingSymbol)  {
+    public static String pad(String source, int length, char paddingSymbol) {
 
         int totalPadding = Math.abs(length - source.length());
         int leftPad = totalPadding / 2;
@@ -74,7 +73,7 @@ public class StringHelpers {
         String rightPadding = "";
         if (source.length() > length) {
             source = source;
-        }else if (length % 2 != 0) {
+        } else if (length % 2 != 0) {
             for (int i = 0; i < leftPad; i++) {
                 leftPadding = leftPadding + paddingSymbol;
             }
@@ -82,16 +81,16 @@ public class StringHelpers {
                 rightPadding = rightPadding + paddingSymbol;
             }
         }
-        return leftPadding+source+rightPadding;
+        return leftPadding + source + rightPadding;
 
     } // S
 
     public static String padEnd(String source, int length, char paddingSymbol) {
-        if (source.length() == 0){
+        if (source.length() == 0) {
             source = "";
-        }else if (source.length() > length) {
+        } else if (source.length() > length) {
             source = source;
-        }else if (length > source.length()){
+        } else if (length > source.length()) {
             int paddingLength = length - source.length();
             String padding = "";
             for (int i = 0; i < paddingLength; i++) {
@@ -103,10 +102,29 @@ public class StringHelpers {
         return source;
     } // S
 
+    /**
+     * This method adds the given padding symbol to the beginning of the string until the desired length is reached.
+     *
+     * @param source the original string
+     * @param length the desired total length of the result string
+     * @param paddingSymbol the character used for padding
+     * @return the padded string, or the original string if it is already longer than the given length
+     *
+     * @author Gabriela
+     */
     public static String padStart(String source, int length, char paddingSymbol) {
-        return null;
-
-    } // G
+        String paddedSource = source;
+        if (source.length() == 0) {
+            source = "";
+        } else if (source.length() > length) {
+            source = source;
+        } else if (length > source.length()) {
+            for (int i = 0; i < (length-source.length(); i++) {
+                paddedSource = paddingSymbol + paddedSource;
+            }
+        }
+        return paddedSource;
+    }
 
     public static String repeat(String source, int times) {
         return null;
