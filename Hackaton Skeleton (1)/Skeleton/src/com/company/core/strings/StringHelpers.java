@@ -23,6 +23,14 @@ public class StringHelpers {
         return String.format("%s%s", string1, string2);
     }
 
+    /**
+     * Checks whether the given string contains the specified character.
+     *
+     * @param source the string in which we search for the character.
+     * @param symbol the character that is searched for in the string.
+     * @return true if the character is found in the string, false otherwise.
+     * @author Aleks Oynakov
+     */
     public static boolean contains(String source, char symbol) {
         for (int i = 0; i < source.length(); i++) {
             if (source.charAt(i) == symbol) {
@@ -32,6 +40,14 @@ public class StringHelpers {
         return false;
     }
 
+    /**
+     * Checks whether the given string ends with the specified character.
+     *
+     * @param source the string that is checked.
+     * @param target the character that is compared with the last character of the string.
+     * @return true if the string ends with the given character, false otherwise.
+     * @author Aleks Oynakov
+     */
     public static boolean endsWith(String source, char target) {
         if (source.length() > 0) {
             char lastChar = source.charAt(source.length() - 1);
@@ -42,6 +58,14 @@ public class StringHelpers {
         return false;
     }
 
+    /**
+     * Returns the index of the first occurrence of the given character in the given string.
+     *
+     * @param source the string in which the search is performed.
+     * @param target the character whose first occurrence index is returned.
+     * @return the index of the first occurrence of the character, or -1 if the character is not found.
+     * @author Aleks Oynakov
+     */
     public static int firstIndexOf(String source, char target) {
         for (int i = 0; i < source.length(); i++) {
             if (target == source.charAt(i)) {

@@ -33,6 +33,14 @@ public class ArrayHelpers {
         }
     }
 
+    /**
+     * Adds all given elements to the end of the given array.
+     *
+     * @param source the array to which the elements are added.
+     * @param elements the values that have to be added to the array.
+     * @return a new array containing the elements of the source array followed by the given elements.
+     * @author Aleks Oynakov
+     */
     public static int[] addAll(int[] source, int... elements) {
         int[] result = new int[source.length + elements.length];
 
@@ -81,7 +89,17 @@ public class ArrayHelpers {
         }
 
     }
-
+    /**
+     * Copies a specified number of elements from one array into another array,
+     * starting from the given source and destination indexes.
+     *
+     * @param sourceArray the array from which the elements are copied.
+     * @param sourceStartIndex the starting index in the source array.
+     * @param destinationArray the array into which the elements are copied.
+     * @param destStartIndex the starting index in the destination array.
+     * @param count the number of elements to be copied.
+     * @author Aleks Oynakov
+     */
     public static void copyFrom(int[] sourceArray, int sourceStartIndex,
                                 int[] destinationArray, int destStartIndex, int count) {
         int indexSource = sourceStartIndex;
@@ -113,7 +131,17 @@ public class ArrayHelpers {
         }
         return -1;
     }
-
+    /**
+     *
+     * Inserts the given element at the specified index in the given array.
+     *
+     * @param source the array in which the element is inserted.
+     * @param index the position at which the element is inserted.
+     * @param element the value that is inserted into the array.
+     * @return a new array containing the elements of the source array
+     *         with the given element inserted at the specified index.
+     * @author Aleks Oynakov
+     */
     public static int[] insert(int[] source, int index, int element) {
         int[] result = new int[source.length + 1];
         for (int i = 0; i < index; i++) {
@@ -123,7 +151,6 @@ public class ArrayHelpers {
         for (int i = index + 1; i < result.length; i++) {
             result[i] = source[i - 1];
         }
-
         return result;
     }
 
